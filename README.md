@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=InsightPulse&fontSize=80&fontAlignY=35&desc=No-code%20Data%20Analytics%20%26%20ETL&descAlignY=55&descAlign=50" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=InsightPulse&fontSize=80&desc=No-code%20Data%20Analytics%20%26%20ETL&descSize=20&descAlignY=60" width="100%" />
 
 # 📊 InsightPulse
 
@@ -109,4 +109,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <i>Crafted with passion for clean data and clean code.</i>
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=150&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=150&section=footer" width="100%" />
