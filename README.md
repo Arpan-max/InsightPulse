@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=InsightPulse&fontSize=80&desc=No-code%20Data%20Analytics%20%26%20ETL&descSize=20&descAlignY=60" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=InsightPulse&fontSize=80&desc=Data%20Analytics%20Platform&descSize=20&descAlignY=70" width="100%" />
 
 # 📊 InsightPulse
 
