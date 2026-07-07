@@ -1,73 +1,107 @@
-# InsightPulse
-A no-code data analytics tool that lets non-technical users build configurable ETL pipelines and explore auto-generated dashboards.
+<div align="center">
 
-## Features
-- **No-code ETL Pipeline**: Add steps like Drop Nulls, Filter, Group By, etc. without writing code.
-- **Auto-Dashboards**: Get instant insights via summary stats and auto-generated charts.
-- **Custom Chart Builder**: Explore your transformed data using interactive charts.
-- **Live Recompute**: Instantly see changes as you modify your pipeline steps.
-- **Export**: Export transformed data to CSV.
-- **Live Sample Data**: Comes with a bundled `sample_sales.csv` for easy demoing.
+# 📊 InsightPulse
 
-## Tech Stack
-- React 18
-- TypeScript
-- Tailwind CSS
-- PapaParse (for CSV processing)
-- Recharts (for Data Visualizations)
+**A Lightning-Fast, No-Code Data Analytics & ETL Tool**
 
-*(Note: The architecture described below preserves the exact decoupled pattern requested for the original Python/Streamlit spec, adapted for a browser-native React environment to run perfectly on this platform).*
+[![Live Demo](https://img.shields.io/badge/Live_Demo-InsightPulse-blue?style=for-the-badge&logo=vercel)](https://insight-pulse-omega.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/Arpan-max/InsightPulse.git)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-## Folder Structure
-```
+<br/>
+
+<a href="https://insight-pulse-omega.vercel.app/">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=600&size=26&duration=3000&pause=1000&color=2563EB&center=true&vCenter=true&width=600&lines=No-Code+ETL+Pipelines;Interactive+Auto-Dashboards;In-Browser+Data+Processing;Export+Ready" alt="Typing SVG" />
+</a>
+
+</div>
+
+<br/>
+
+## 🌟 Overview
+
+**InsightPulse** empowers non-technical users to process, clean, and visualize data without writing a single line of code. Built entirely on the client-side with React, it processes CSVs directly in the browser, ensuring complete privacy and blazing-fast performance.
+
+Upload a CSV, build a transformation pipeline step-by-step, and watch the interactive dashboard update in real-time.
+
+## ✨ Key Features
+
+- 🛠️ **No-Code ETL Pipeline**: Add steps like *Drop Nulls*, *Filter*, *Group By*, and *Add Computed Columns* using an intuitive UI.
+- ⚡ **Live Recompute Engine**: See changes instantly as you modify or reorder pipeline steps. No loading spinners.
+- 📊 **Auto-Generated Dashboards**: Instantly get statistical profiles, null counts, and automatic bar charts for your data.
+- 📈 **Custom Chart Builder**: Explore your transformed dataset using an integrated Recharts visualizer.
+- 🔒 **100% Client-Side**: Your data never leaves your browser. All parsing and transformations happen locally.
+- 📥 **Export to CSV**: Download your cleaned, transformed dataset with a single click.
+
+## 🏗️ Architecture & Engineering
+
+This project was engineered with a strict **Decoupled Architecture**, ensuring high maintainability and extensibility. 
+
+The application is split into two distinct domains:
+1. **Pipeline Engine**: A pure data-transformation layer.
+2. **Dashboard UI**: A presentation layer that knows nothing about specific pipeline steps.
+
+Adding a new data transformation step **does not require touching any Dashboard UI code**. The system uses a Registry Pattern where new steps are defined independently and automatically injected into the UI and executor.
+
+### 🗂️ Project Structure
+
+```text
 src/
 ├── pipeline/
-│   ├── types.ts              (PipelineStep interfaces)
-│   ├── registry.ts           (PIPELINE_STEPS dict — the only place steps are wired up)
-│   ├── executor.ts           (Executes the pipeline steps over the raw data)
-│   └── steps.tsx             (Individual step logic and config UI components)
+│   ├── types.ts              # Core interfaces (PipelineStepDef)
+│   ├── registry.ts           # Central registry for all steps
+│   ├── executor.ts           # Pipeline engine running steps over raw data
+│   └── steps.tsx             # Implementations of individual transformations
 ├── dashboard/
-│   ├── Sidebar.tsx           (Pipeline builder UI — imports registry.ts only)
-│   ├── DataPreview.tsx       (Raw + transformed data preview)
-│   ├── SummaryStats.tsx      (Data profile: mean, min, max, null counts)
-│   ├── AutoCharts.tsx        (Auto bar charts for categorical columns)
-│   └── CustomChartBuilder.tsx(User-driven Recharts chart builder)
-└── App.tsx                   (Main layout connecting sidebar and dashboard tabs)
+│   ├── Sidebar.tsx           # Pipeline builder UI
+│   ├── DataPreview.tsx       # Raw & transformed tabular preview
+│   ├── SummaryStats.tsx      # Automatic statistical profiling
+│   ├── AutoCharts.tsx        # Smart categorical bar charts
+│   └── CustomChartBuilder.tsx# Interactive Recharts builder
+└── App.tsx                   # Main layout coordinator
 ```
-**Architecture Note**: Adding a new transformation step must never require touching any file under `dashboard/`. The dashboard code only iterates over `PIPELINE_STEPS` and calls generic `renderConfig()` and `apply()` methods.
 
-**State Model Note**: All state is held in React state (`rawData`, `steps`, etc.) ensuring the pipeline re-computes optimally via React `useMemo` hooks.
+## 🛠️ Tech Stack
 
-## Local setup
-1. Clone repository
-2. Run `npm install`
-3. Run `npm run dev`
-4. Open the browser URL indicated by Vite.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" />
+</p>
 
-## How it works
-1. Upload a CSV file using the sidebar, or click "Use Sample Dataset".
-2. Switch between the Data Preview, Pipeline Result, and Dashboard tabs.
-3. Click "+ Add Step" in the sidebar to add a data transformation. 
-4. Configure the step and watch the Dashboard and Pipeline Result tabs update live.
+- **CSV Processing**: [PapaParse](https://www.papaparse.com/)
+- **Data Visualization**: [Recharts](https://recharts.org/)
 
-## How to add a new transformation step
-Adding a new step is extremely simple and requires no UI changes to the dashboard or sidebar:
+## 🚀 Getting Started
+
+To run this project locally:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Arpan-max/InsightPulse.git
+cd InsightPulse
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
+```
+
+## 📝 How to Add a New Step (For Developers)
+
+The decoupled architecture makes it incredibly easy to extend InsightPulse. To add a new transformation (e.g., "Sort Data"):
 1. Open `src/pipeline/steps.tsx`.
-2. Create a new `PipelineStepDef` object (defining `id`, `label`, `renderConfig` for its UI, and `apply` for its transformation logic).
-3. Export it and add it to `PIPELINE_STEPS` inside `src/pipeline/registry.ts`.
-The Sidebar will automatically pick it up, render its form, and the pipeline executor will run it!
+2. Define a new `PipelineStepDef` object containing its `id`, `label`, `renderConfig` (React UI), and `apply` (Transformation logic).
+3. Register it in `src/pipeline/registry.ts`.
+*That's it! The step will automatically appear in the UI and function perfectly without any dashboard modifications.*
 
-## Manual Steps You Must Do Yourself
-**A. Create a Virtual Environment / Install Packages**
-Run `npm install` locally in the project directory.
+## 📄 License
 
-**B. Push code to GitHub**
-`git init`, `git add .`, `git commit -m "Initial commit"`, create a repo on GitHub, `git remote add origin <repo-url>`, `git push -u origin main`.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**C. Deploy on Vercel / Netlify / Cloudflare Pages**
-1. Connect your GitHub repository to your preferred static hosting provider (e.g. Vercel).
-2. Ensure the build command is `npm run build` and output directory is `dist`.
-3. Deploy! No secrets or environment variables are needed for this project.
-
-**D. Know the limits**
-Since all data parsing and transformations happen directly in the browser memory, extremely large CSV files (e.g. hundreds of MBs) may cause the browser tab to slow down or crash. It is ideal for small to medium analytics datasets.
+---
+<div align="center">
+  <i>Crafted with passion for clean data and clean code.</i>
+</div>
