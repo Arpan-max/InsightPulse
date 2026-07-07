@@ -1,6 +1,9 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=InsightPulse&fontSize=80&animation=twinkling&fontAlignY=35&desc=No-code%20Data%20Analytics%20%26%20ETL&descAlignY=55&descAlign=50" width="100%" />
+
 # 📊 InsightPulse
+
 
 **A Lightning-Fast, No-Code Data Analytics & ETL Tool**
 
@@ -105,3 +108,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
   <i>Crafted with passion for clean data and clean code.</i>
 </div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=150&section=footer" width="100%" />
