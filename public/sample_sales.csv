@@ -1,0 +1,26 @@
+order_id,order_date,customer_name,product,category,region,quantity,unit_price,total_price
+1001,2023-01-15,Alice Smith,Laptop,Electronics,North,1,1200,1200
+1002,2023-01-16,Bob Johnson,Desk Chair,Furniture,East,2,150,300
+1003,2023-01-16,Charlie Brown,Monitor,Electronics,South,1,,350
+1004,2023-01-17,Diana Prince,Notebooks,Office,West,10,5,50
+1005,2023-01-17,Eve Adams,Desk Chair,Furniture,East,1,150,150
+1006,2023-01-18,,Smartphone,Electronics,North,1,800,800
+1006,2023-01-18,,Smartphone,Electronics,North,1,800,800
+1008,2023-01-19,George Clark,Printer,Electronics,West,1,200,200
+1009,2023-01-20,Hannah Davis,Pens,Office,South,50,2,100
+1010,2023-01-20,Ian Miller,Bookshelf,Furniture,North,1,250,250
+1011,2023-01-21,Jane Doe,Tablet,Electronics,East,2,400,800
+1012,2023-01-22,Kevin White,Stapler,Office,South,5,10,50
+1013,2023-01-23,Laura Black,Headphones,Electronics,West,3,100,300
+1014,2023-01-23,Mike Green,Office Desk,Furniture,North,1,500,500
+1015,2023-01-24,Nina Hall,Keyboard,Electronics,East,1,,50
+1016,2023-01-25,Oscar King,Mouse,Electronics,South,2,25,50
+1017,2023-01-26,Paul Young,Filing Cabinet,Furniture,West,1,180,180
+1018,2023-01-27,Quinn Wright,Markers,Office,North,20,3,60
+1019,2023-01-28,Rachel Scott,Webcam,Electronics,East,1,90,90
+1020,2023-01-29,Steve Adams,Ergonomic Chair,Furniture,South,1,300,300
+1020,2023-01-29,Steve Adams,Ergonomic Chair,Furniture,South,1,300,300
+1022,2023-01-30,Tom Baker,Projector,Electronics,West,1,600,600
+1023,2023-01-31,Ursula Evans,Desk Lamp,Furniture,North,2,40,80
+1024,2023-02-01,Victor Hill,Paper,Office,East,10,8,80
+1025,2023-02-02,Wendy Jones,Laptop Stand,Electronics,South,1,35,35
